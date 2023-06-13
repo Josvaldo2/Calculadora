@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Calculadora da inflação</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calculadora.css">
+    <script src="calculadora.js"></script>
+</head>
+<body>
+    <h1>A Calculadora da Inflação</h1>
+    <h2>Exibe várias informações relacionadas á inflação em anos diferentes.</h2>
+    
+    <label for="ano">Selecione um ano: </label>
+    <select name="anoSelecao" id="ano">
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+    </select><br>
+
+    <label for="valor">Escreva alguma quantia que você gastou naquele ano: </label>
+    <input type="number" name="valorSelecao" id="valor" step="0.01" min="0" required>
+    <span class="validacao"></span>
+</body>
+</html>
