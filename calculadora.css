@@ -3,7 +3,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: black;
     background-color: white;
-    font-size: 1.5vw;
+    font-size: 1.5vmax;
     font-weight: 600;
 }
 
@@ -16,24 +16,22 @@ a {
     text-decoration: none;
 }
 
-select, input {
-    font-size: 1.2vw;
+select, input, button {
+    font-size: 0.8em;
+    margin-bottom: 1vh;
     border-color: blue;
     border-width: 2px;
     border-radius: 8px;
     background-image: linear-gradient(145deg, #e9e9ed, #98e2ff);
 }
 
-input:invalid + .validacao::after{
+input:invalid + .validacao::after {
     content: "Valor inválido!";
-    color: rgb(99, 0, 0);
+    color: firebrick; 
     position: absolute;
+    margin-left: 5px;
 }
 
 a:hover {
     text-decoration: underline;
-}
-
-.validacao {
-    margin-left: 5px;
 }

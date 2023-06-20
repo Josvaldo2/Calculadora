@@ -9,19 +9,74 @@
 </head>
 <body>
     <h1>A Calculadora da Inflação</h1>
-    <h2>Exibe várias informações relacionadas á inflação em anos diferentes.</h2>
-    
-    <label for="ano">Selecione um ano: </label>
-    <select name="anoSelecao" id="ano">
-        <option value="2019">2019</option>
-        <option value="2020">2020</option>
-        <option value="2021">2021</option>
-        <option value="2022">2022</option>
-        <option value="2023">2023</option>
-    </select><br>
+    <h2>Calcula várias informações relacionadas à inflação em anos diferentes.</h2>
+    <form>    
+        <label for="ano1">Selecione o ano principal: </label>
+        <select id="ano1" size="0">
+			<option value="2002">2002</option>
+			<option value="2003">2003</option>
+			<option value="2004">2004</option>
+			<option value="2005">2005</option>
+			<option value="2006">2006</option>
+			<option value="2007">2007</option>
+			<option value="2008">2008</option>
+			<option value="2009">2009</option>
+			<option value="2010">2010</option>
+			<option value="2011">2011</option>
+			<option value="2012">2012</option>
+			<option value="2013">2013</option>
+			<option value="2014">2014</option>
+			<option value="2015">2015</option>
+			<option value="2016">2016</option>
+			<option value="2017">2017</option>
+			<option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+        </select><br>
 
-    <label for="valor">Escreva alguma quantia que você gastou naquele ano: </label>
-    <input type="number" name="valorSelecao" id="valor" step="0.01" min="0" required>
-    <span class="validacao"></span>
+        <label for="ano2">Selecione o ano secundário: </label>
+        <select id="ano2" size="0">
+			<option value="2002">2002</option>
+			<option value="2003">2003</option>
+			<option value="2004">2004</option>
+			<option value="2005">2005</option>
+			<option value="2006">2006</option>
+			<option value="2007">2007</option>
+			<option value="2008">2008</option>
+			<option value="2009">2009</option>
+			<option value="2010">2010</option>
+			<option value="2011">2011</option>
+			<option value="2012">2012</option>
+			<option value="2013">2013</option>
+			<option value="2014">2014</option>
+			<option value="2015">2015</option>
+			<option value="2016">2016</option>
+			<option value="2017">2017</option>
+			<option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+        </select><br>
+
+        <label for="valor">Escreva alguma quantia que você gastou no ano principal:</label>
+        <input type="number" name="valorSelecao" id="valor" step="0.01" min="0" value="100,00" required>
+        <span class="validacao"></span><br>
+        
+		<button type="button" onclick="calcular()">Calcular!</button>
+    </form>
+
+	<div id="resultados" style="text-align: left; width: 65vw; margin: auto;">
+		<div class="blue">Ano principal: <span id="rAno1"></span></div>
+		<div class="blue">Ano secundário: <span id="rAno2"></span></div>
+		<div class="blue">Valor inicial: <span id="rValor"></span></div>
+		<div class="blue">Valor equivalente no segundo ano: <span id="rValor2"></span></div>
+		<div class="blue">Quantos litros podem ser comprados no ano principal: <span id="rLitros1"></span></div>
+		<div class="blue">Quantos litros podem ser comprados no ano secundário: <span id="rLitros2"></span></div>
+	</div>
 </body>
 </html>
