@@ -1,5 +1,5 @@
 /* Javascript da Calculadora da inflação
-   programado pelo augusto entre os dias 18 e 19 de
+   programado pelo augusto entre os dias 18 e 21 de
    Julho de 2023 */
 
 precos = {"2002": 1.57,
@@ -21,20 +21,36 @@ precos = {"2002": 1.57,
           "2018": 4.19,
           "2019": 4.30,
           "2020": 4.46,
-          "2021": 5.49,};
+          "2021": 5.49,
+          "2022": 3.86,
+          "2023": 5.40};
 
           
 function calcular() {
-    let listaResultados = document.querySelectorAll("#resultados span");
+    let validade = document.getElementById("valor").validity
+    if (validade.badInput + validade.valueMissing + validade.stepMismatch == true) {
+        return 0;
+    }
+
+    let listaResultados = document.querySelectorAll("#resultados span");    
+    let valor = document.getElementById("valor").value;
     let ano1 = document.getElementById("ano1").value;
     let ano2 = document.getElementById("ano2").value;
-    let valor = document.getElementById("valor").value;
 
-    let calculos = [ano1, ano2, valor,
-        valor*(precos[ano1]/precos[ano2]),
-        valor/precos[ano1], valor/precos[ano2]];
+    let calculos = [valor, ano1,
+                    valor*(precos[ano2]/precos[ano1]),
+                    ano2, valor/precos[ano1],
+                    ano1, valor/precos[ano2], ano2
+                ];
 
     for (let i = 0; i < listaResultados.length; i++) {
-        listaResultados[i].textContent = Math.floor(calculos[i]*100)/100;
+        let resultadoFormatado = parseFloat(calculos[i]).toFixed(2).replace(".", ",");
+        if (resultadoFormatado.endsWith(",00")) {
+            listaResultados[i].textContent = calculos[i]
+        }
+        else {
+            listaResultados[i].textContent = resultadoFormatado
+        }
+        document.getElementById("resultados").style.display = "inherit"
     }
 }
