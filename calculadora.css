@@ -5,9 +5,10 @@ body {
     background-color: white;
     font-size: 1.35em;
     font-weight: 600;
+    line-height: 1.35em;
 }
 
-#resultados{
+#resultados {
     width: 65vw;
     margin: auto;
     margin-top: 1em;
@@ -20,20 +21,17 @@ body {
     border-style: solid;
 }
 
-.resultados div {
-    margin-bottom: 0.3em;
-}
-
-h1, h2, a:hover, #resultados span{
-    color: blue;
-}
-
 p {
     width: 85vw;
     margin: auto;
+    margin-top: 0.8em;
     text-align: left;
-    margin-bottom: 0.8em;
 }
+
+h1, h2, #resultados span{
+    color: blue;
+}
+
 
 select, input, button {
     font-size: 0.8em;
@@ -42,10 +40,6 @@ select, input, button {
     border-width: 2px;
     border-radius: 8px;
     background-image: linear-gradient(145deg, #e9e9ed, #98e2ff);
-}
-
-math {
-    display: block;
 }
 
 input:invalid + .validacao::after {
