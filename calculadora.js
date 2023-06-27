@@ -43,7 +43,7 @@ function calcular() {
     let valor = document.getElementById("valor").value;
     let ano1 = document.getElementById("ano1").value;
     let ano2 = document.getElementById("ano2").value;
-    let listaResultados = document.querySelectorAll("#resultados span");
+    let listaResultados = document.querySelectorAll(".calculos [data-valor]");
 
     /* Lista com os valores que são inseridos nos elementos <span> com classes correspondentes, alguns desses valores
     são os cálculos realizados pela calculadora */
@@ -61,7 +61,7 @@ function calcular() {
 
     // Loop usado para inserir as entradas do usuário e resultados dos cálculos no texto de resultados
     for (let i = 0; i < listaResultados.length; i++) {
-        let resultado = calculos[listaResultados[i].className];
+        let resultado = calculos[listaResultados[i].getAttribute("data-valor")];
 
         if (parseInt(resultado) != resultado) { // Verificamos se o valor que vai ser inserido no texto é um número inteiro 
             resultado = (Math.round(resultado*100)/100.).toFixed(2).replace(".", ","); // Se ele não for um número inteiro, nós arredondamos ele

@@ -1,11 +1,11 @@
 body {
-    text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: black;
     background-color: white;
     font-size: 1.35em;
     font-weight: 600;
     line-height: normal;
+    text-align: left;
 }
 
 #resultados {
@@ -21,17 +21,23 @@ body {
     border-style: solid;
 }
 
-p {
+#calculadora, h1, h2 {
+    text-align: center;
+}
+
+p, #exemplos {
     width: 85vw;
     margin: auto;
     margin-top: 0.8em;
-    text-align: left;
 }
 
-h1, h2, #resultados span{
+#exemplos {
+    width: 75vw;
+}
+
+h1, h2, h4, span{
     color: blue;
 }
-
 
 select, input, button {
     font-size: 0.8em;
@@ -49,6 +55,6 @@ input:invalid + .validacao::after {
     margin-left: 5px;
 }
 
-.Rporcentagem::after {
+span[data-valor="Rporcentagem"]::after {
     content: "%";
 }
