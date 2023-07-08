@@ -1,5 +1,5 @@
 /* Javascript da Calculadora da inflação
-   programado pelo Augusto entre os dias 18 e 23 de
+   programado pelo Augusto (Josvaldo2) entre os dias 18 e 23 de
    Julho de 2023
    
    extensivamente documentado para ajudar quem não possui conhecimento de programação ou iniciantes à entender o código. */
@@ -30,7 +30,7 @@ precos = { // Lista com os preços da gasolina
 };
 
 /* Função responsável por fazer os cálculos relacionados ao preço da gasolina, é executada sempre que o botão de calcular é pressionado
-ou algum dos valores de entrada é alterado */
+ou algum dos valores de entrada é alterado. */
 function calcular() {
     /* A primeira coisa a ser feita é verificar se a quantia de dinheiro inserida é válida (se o valor não está vazio, contém letras ou
     possui mais de 3 dígitos decimais) */
