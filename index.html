@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="calculadora.css">
-    <script src="calculadora.js"></script>
-
+	
 	<link rel="shortcut icon" href="EpicFaceBlue.png" type="image/x-icon">
 	<meta name="title" content="Calculadora da Inflação da Gasolina" />
 	<meta name="description" content="Uma calculadora simples para a inflação da gasolina ao decorrer dos anos" />
@@ -20,7 +19,7 @@
     <h2>Calcula várias informações relacionadas à inflação em anos diferentes.</h2>
     <div oninput="calcular()">    
         <label for="ano1">Selecione o ano principal: </label>
-        <select id="ano1" size="0">
+        <select id="ano1" size="0" class="efeito-hover">
 			<option value="2002">2002</option>
 			<option value="2003">2003</option>
 			<option value="2004">2004</option>
@@ -44,9 +43,9 @@
             <option value="2022">2022</option>
             <option value="2023">2023</option>
         </select><br>
-
+		
         <label for="ano2">Selecione o ano secundário: </label>
-        <select id="ano2" size="0">
+        <select id="ano2" size="0" class="efeito-hover">
 			<option value="2002">2002</option>
 			<option value="2003">2003</option>
 			<option value="2004">2004</option>
@@ -70,47 +69,24 @@
             <option value="2022">2022</option>
             <option value="2023">2023</option>
         </select><br>
-
+		
         <label for="valor">Escreva alguma quantia que você gastou no ano principal:</label>
-        <input type="number" id="valor" step="0.01" min="0" value="100" required>
+        <input type="number" id="valor" step="0.01" min="0" value="100" required class="efeito-hover">
         <span class="validacao"></span><br>
         
-		<button type="button" onclick="calcularB()">Calcular!</button>
+		<button type="button" onclick="calcularB()" class="efeito-hover">Calcular!</button>
     </div>
-
-	<div id="resultados" class="calculos">
-		<div>Se você gastou <span data-valor="Rvalor1"></span> reais em <span data-valor="Rano1"></span> para comprar gasolina...</div>
-
-		<div>Você poderia ter gastado <span data-valor="Rvalor2"></span> reais em <span data-valor="Rano2"></span>
-		para comprar a mesma quantidade, tendo uma diferença de <span data-valor="Rporcentagem"></span>!</div>
-
-		<div>Mas se quisesse ter gasto o mesmo dinheiro para comprar a gasolina, você poderia
-		ter comprado <span data-valor="Rlitros1"></span> litros em <span data-valor="Rano1"></span> (<span data-valor="Rpreco1"></span> reais por litro) e <span data-valor="Rlitros2"></span> litros em <span data-valor="Rano2"></span> (<span data-valor="Rpreco2"></span> reais por litro)!</div>
-	</div>
-</div>
 	
-	<h2>Como a calculadora funciona?</h2>
-	<p>Ela recebe três entradas do usuário que são usadas nos cálculos: Um ano principal, um ano secundário e uma quantia de dinheiro em reais, 
-		essa quantia seria baseada no preço da gasolina no ano principal e é ajustada mais tarde para o preço no segundo ano.</p>
-	<p>Quando o usuário muda o valor de qualquer uma das entradas da calculadora ou pressiona o botão de calcular, uma função é executada no 
-		código do site, que é responsável por calcular e exibir os valores na caixa de resultados.</p>
-	<p>Ao ser executada, a função faz algumas preparações antes de realizar os cálculos. A primeira coisa que ela faz é verificar se a quantia
-		inserida pelo usuário é válida. já que o código é executado sempre que o valor é alterado, nós devemos verificar primeiro se ele não
-		contém letras, mais de dois números decimais (porque os 2 números decimais seriam os centavos da quantia) ou se não está vazio. nós
-		fazemos essa verificação para evitar erros com valores inválidos, já que nós não podemos fazer cálculos com letras por exemplo.</p>
-	<p>Em seguida, o programa usa uma lista para obter o preço da gasolina equivalente aos anos inseridos e armazena eles e os outros
-		valores inseridos em variáveis para ter um acesso mais rápido.</p>
-	<p>Agora que as preparações estão feitas, o programa pode realizar os cálculos. Para fazer isso, ele usa outra lista com as fórmulas
-		necessárias para calcular cada valor e processa estas fórmulas para obter os resultados. Você pode ver abaixo que fórmulas são essas
-		e como elas são calculadas, usando as entradas da calculadora como exemplo:
-	</p>
-	<div id="exemplos" class="calculos">
-		<h4>Quantia ajustada para o preço da gasolina no ano secundário</h4>
-		<p><span>valor²</span> = <span>valor¹</span> * (<span>preço¹</span> / <span>preço²</span>)</p>
-		<p>Exemplo: <span>valor²</span> = <span data-valor="Rvalor1">340</span> * (<span data-valor="Rpreco2">2,58</span> / <span data-valor="Rpreco1">2,88</span>) = <span data-valor="Rvalor2">379,53</span></p>
-		<h4>Diferença entre o preço da gasolina nos dois anos em forma de porcentagem</h4>
-		<p><span>porcentagem</span> = |100 - (<span>preço²</span> / <span>preço¹</span>) * 100|</p>
-		<p>Exemplo: <span>porcentagem</span> = |100 - (<span data-valor="Rpreco2">2,74</span> / <span data-valor="Rpreco1">2,49</span>) * 100| = <span data-valor="Rporcentagem">10,04</span></p>
-	</div>
-</body>
-</html>
+	<div id="resultados" class="efeito-hover">
+		<div>Se você gastou <span data-valor="Rvalor1"></span> reais em <span data-valor="Rano1"></span> para comprar gasolina...</div>
+		
+		<div>Você poderia ter gastado <span data-valor="Rvalor2"></span> reais em <span data-valor="Rano2"></span>
+			para comprar a mesma quantidade, tendo uma diferença de <span data-valor="Rporcentagem"></span>!</div>
+			
+			<div>Mas se quisesse ter gasto o mesmo dinheiro para comprar a gasolina, você poderia
+				ter comprado <span data-valor="Rlitros1"></span> litros em <span data-valor="Rano1"></span> (<span data-valor="Rpreco1"></span> reais por litro) e <span data-valor="Rlitros2"></span> litros em <span data-valor="Rano2"></span> (<span data-valor="Rpreco2"></span> reais por litro)!</div>
+			</div>
+		</div>
+	<script src="calculadora.js"></script>
+	</body>
+	</html>
